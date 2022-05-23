@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>사용자 입력 폼1</title>
+</head>
+<body>
+	<h1>GET 전송</h1>
+	<form action="./run.jsp" method="GET">
+		<input type="text" name="v1"><br>
+		<input type="text" name="v2"><br>
+		<button type="submit">전송</button>
+	</form>
+	<!-- GET은 요청사항을 URL에서 확인가능 POST는 확인불가, 개발자모드에서는 확인가능 Network-Payload에서 -->
+	<h1>POST 전송</h1>
+	<form action="./run.jsp" method="POST">
+		<input type="text" name="v1"><br>
+		<input type="text" name="v2"><br>
+		<button type="submit">전송</button>
+	</form>
+</body>
+</html>

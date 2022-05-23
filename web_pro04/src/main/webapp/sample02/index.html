@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>사용자 입력 폼2</title>
+</head>
+<body>
+	<input form="f1"type="text" name="outside"><br>
+	<form id="f1" action="./run.jsp" method="GET"> <!-- 전송을할려면 name이라는 속성을 꼭 써주어야한다!!  hidden은 사용자가 입력불가! 안보이니까 그래서 values 라는 속성필요-->
+		<fieldset>
+			<legend>분류 1</legend>
+			<label>아이디:</label><input type="text" name="v1" value="init_value"><br> <!-- ★value는 그 버튼에 들어갈 초기값을 의미한다! -->
+			<label>패스워드:</label><input type="password" name="v2" placeholder="패스워드입력" required><br>
+			<input type="hidden" name="v3" value="value3"><br>
+			<input type="text" name="v4" value="readonly data" readonly><br>
+			<input type="text" name="v5" value="disabled data" disabled><br> <!-- readonly와 달리 전송데이터로는 사용할 수 없다. -->
+			<input type="text" name="v6" minlength="4" maxlength="12" size="12"><br> <!-- size는 버튼사이즈!, min, max는 최소 최대입력값을 설정해서 클라이언트입력방식유도 -->
+		</fieldset>
+		<hr>
+		<input type="number" name="v7" min="1" max="10" step="2"><br>
+		<input type="number" name="v8" min="1" max="10" step="0.5"><br>
+		<input type="range" name="v9" min="0" max="100" step="5" oninput="out1.value = this.value">
+		<input id="out1" type="text" size="2" readonly><br><!-- 드래그바, 참고로 두번째 input에서 사이즈를 줄이려면 타입을 넘버가아닌 텍스트로해야 되더라.  -->
+		<hr>
+		<input type="date" name="v10" value="2022-05-23"><br>
+		<input type="time" name="v11" value="17:42"><br>
+		<input type="month" name="v12" value="2022-05"><br>
+		<input type="datetime-local" name="v13" value="2022-05-23T17:42"><br>
+		<hr>
+		<input type="search" name="v14"><br>	
+		<input type="url" name="v15"><br>	
+		<input type="email" name="v16"><br>	
+		<input type="tel" name="v17"><br>	
+		<hr>
+		<label for="id_chk1">체크 1</label> <input id="id_chk1" type="checkbox" name="chk1" value="a" checked>
+		<label for="id_chk2">체크 2</label> <input id="id_chk2" type="checkbox" name="chk2" value="b">
+		<label for="id_chk3">체크 3</label> <input id="id_chk3" type="checkbox" name="chk3" value="c"><br>
+		<label for="id_rdo1">라디오 1</label> <input id="id_rdo1" type="radio" name="rdo1" value="d">
+		<label for="id_rdo2">라디오 2</label> <input id="id_rdo2" type="radio" name="rdo2" value="e">
+		<label for="id_rdo3">라디오 3</label> <input id="id_rdo3" type="radio" name="rdo3" value="f" checked><br>
+		<hr>
+		<input type="button" value="버튼">
+		<input type="submit" value="전송">
+		<input type="reset" value="초기화"><br>
+		
+		<button type="button">버튼</button>
+		<button type="submit">전송</button>
+		<button type="reset">초기화</button><br>
+		<hr>
+		<input type="file" name="v18"><br><!-- 파일을 업로드할때는 메소드가 포스트여야만 한다. enctype="multipart/form-data"를 추가로 지정해야한다. -->
+		<input type="file" name="v19" accept="image/png, image/gif" multiple><br> <!-- multiple : 여러파일 선택해서 업로드 가능, accept : 파일 업로드 하는거 제약(가이드수준)-->
+		<hr>
+		<input type="text" list="data_list1">
+		<datalist id="data_list1">
+			<option value="선택 1"></option>
+			<option value="선택 2"></option>
+			<option value="선택 3"></option>
+		</datalist><br>
+		<hr>
+		<select name="v20">
+			<option value="opt1">옵션 1</option>
+			<option value="opt2" selected>옵션 2</option> <!-- selected 쓰면 value같은 느낌 -->
+			<option value="opt3">옵션 3</option>
+		</select><br>
+		<select name="v21" size="4" multiple>
+			<optgroup label="그룹1">
+				<option value="opt1">옵션 1</option>
+				<option value="opt2" selected>옵션 2</option>
+				<option value="opt3">옵션 3</option>
+			</optgroup>
+			<optgroup label="그룹2">
+				<option value="opt4">옵션 4</option>
+				<option value="opt5">옵션 5</option>
+				<option value="opt6">옵션 6</option>
+			</optgroup>
+		</select><br>
+		<hr>
+		<textarea name="v22" cols="30" rows="10" style="resize: none;">한 줄 이상의 텍스트 데이터 입력 가능</textarea><br>
+		<button type="submit">전송</button>
+		
+	</form>
+</body>
+</html>
