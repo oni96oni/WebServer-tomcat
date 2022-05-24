@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>CSS 선택자 2</title>
+	<style>
+		.ex1 > p:active {
+			border: 1px solid red;
+		}
+		
+		.ex1 > p:hover {
+			color: green;
+		}
+		
+		.ext2 > input {
+			border: none;
+			outline: none;
+		}
+		
+		.ex2 > input:enabled {
+			border: 1px solid black;
+		}
+		
+		.ex2 > input:disabled {
+			background-color: #DEDEDE;
+		}
+		
+		.ex2 > input:focus {
+			border: 2px solid #DEDEDE;
+		}
+		
+		.ex2 > input:checked {
+			box-shadow: 1 2 3px 2px red;
+		}
+		
+		.ex3 > a:link {
+			font-weight: bold;
+			color: lightblue;
+		}
+		
+		.ex3 > a:visited {
+			font-weight: bold;
+			color: red;
+		}
+		
+		.ex4 > li:first-child {
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="ex1">
+		<p>:active : 사용자가 HTML 요소에 마우스 클릭을 유지하고 있을 때</p>
+		<p>:hover : 사용자가 HTML 요소에 마우스를 올려두고 있을 때</p>
+	</div>
+	<hr>
+	<div class="ex2">
+		<input type="text"><br>
+		<input type="number"><br>
+		<input type="email" disabled><br>
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+		<input type="checkbox">
+	</div>
+	<div class="ex3">
+		<a href="https:naver.com">네이버로 이동</a>
+	</div>
+	<div class="ex4">
+		<ul>
+			<li>목록A</li>
+			<li>목록B</li>
+				<ul>
+					<li>목록B-1</li>
+					<li>목록B-2</li>
+					<li>목록B-3</li>
+					<li>목록B-4</li>
+					<li>목록B-5</li>
+				</ul>
+			<li>목록C</li>
+			<li>목록D</li>
+			<li>목록E</li>
+		</ul>
+	</div>
+</body>
+</html>
