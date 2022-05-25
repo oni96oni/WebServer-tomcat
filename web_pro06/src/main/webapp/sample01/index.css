@@ -1,0 +1,101 @@
+@charset "UTF-8";
+/*
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+*/
+
+@font-face {
+	font-family : "나눔고딕"; /* 이 이름으로 쓰겠다 명시! */
+	src: url(.NanumGothic-Regular.ttf);
+}
+
+body{
+	font-family: "나눔고딕"
+}
+
+.test1 > .ex1 {
+	font-size: 2em;
+}
+
+.test1 > .ex1 > .ex2{
+	font-size: 2em;
+}
+
+.test2 > .ex1 {
+	font-size: 2rem;
+	color: red;
+}
+
+.test2 > .ex1 > .ex2{
+	font-size: 2rem;
+}
+
+.test3 > .ex1 {
+	/*
+	font-family: "나눔고딕";
+	font-size: 32px;
+	font-weight: 900;
+	font-variant: small-caps;
+	font-style: italic;
+	*/
+	font: italic small-caps bold 32px "맑은고딕"
+	/* font 순서 지켜야한다!! style-variant-weight-size-family순*/
+}
+
+.test4 > .ex1 {
+	font-family: "맑은 고딕";
+	text-transform: uppercase;
+}
+
+.test5 > .ex1 {
+	text-shadow: 300px 10px 5px red;
+	/* 오른쪽, 아래, 흐림, 색 숫자를 마이너스로 넣으면 반대로간다.*/
+}
+
+.test6 > .ex1 {
+	white-space: normal;
+	/* normal <-> nowrap 
+		노말은 브라우저 쭐어들면 자동개행 o 
+		노랩은 자동개행 x 
+		
+		pre는 내가 입력한 공백 그대로 표현(자동 개행x)
+		pre-line은 공백 표현 x , 자동개행o, 
+		pre-wrap 공백 표현o, 자동개행o
+		
+	*/
+}
+
+.test7 > .ex1 {
+	letter-spacing: 12px;
+}
+
+.test7 > .ex2 {
+	word-spacing: 12px;
+}
+
+.test8 > .ex1 {
+	text-align: justify;
+}
+
+.test8 > .ex2 {
+	text-indent: 60px;
+}
+
+.test8 > .ex3 {
+	line-height: 24;
+}
+
+.test8 > .ex4 {
+	width: 100px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: clip;
+}
+
+.test9 > .ex1 {
+	list-style-type: none;
+	list-style-image: url(./customimagecss.png);
+	list-style-position: inside;
+	padding-inline-start: 40px;
+	
+	/* padding 이후부터 position이 적용된다*/
+}
