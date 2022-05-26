@@ -1,18 +1,18 @@
 @charset "UTF-8";
 
 nav.nav-menu ul {
-	list-style-type: none; /* 불릿 없앨때! */
-	background-color: rgb(119,53,249);
-}
-
-nav.nav-menu a {
-	text-decoration: none;  /* 밑줄같은거 없앨때! */
-	color: rgb(250,248,250);
-	padding: 2em;
+	list-style-type: none;
+	background-color: rgb(119, 53, 249);
 }
 
 nav.nav-menu li,a {
-	display: inline-block; /* 가로나열을 세로나열로 ( 블록레벨에서 인라인레벨 )*/
+	display: inline-block;
+}
+
+nav.nav-menu a {
+	text-decoration: none;
+	color: rgb(250, 248, 255);
+	padding: 1em 2em;
 }
 
 nav.nav-menu a:hover {
@@ -25,12 +25,33 @@ nav.nav-menu a.active {
 	color: white;
 }
 
-
-nav.side-menu li,a {
-	display: inline; /* 가로나열을 세로나열로 ( 블록레벨에서 인라인레벨 )*/
+nav.side-menu {
+	width: 280px;
 }
 
-.side-menu a {
-	text-decoration: none;  /* 밑줄같은거 없앨때! */
-	color: rgb(250,248,250);
+nav.side-menu ul {
+	list-style-type: none;
+	background-color: rgb(119, 53, 249);
+	padding: 0;
+}
+
+nav.side-menu li ~ li {
+	border-top: 4px solid white;
+}
+
+nav.side-menu a {
+	display: block;
+	text-decoration: none;
+	color: rgb(250, 248, 255);
+	padding: 1em 2em;
+}
+
+nav.side-menu a:hover {
+	font-weight: bold;
+	color: white;
+}
+
+nav.side-menu a.active {
+	font-weight: bold;
+	color: white;
 }
