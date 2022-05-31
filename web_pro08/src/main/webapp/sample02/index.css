@@ -1,0 +1,34 @@
+@charset "UTF-8";
+
+* {
+	margin: 0; padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	width: 768px;
+}
+
+.content-center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.table {
+	width: 100%;
+}
+
+.table-normal {
+	border-collapse: collapse;	
+}
+
+.table-normal > thead td,th {
+	border-top: 2px solid black;
+	border-bottom: 1px solid gray;
+	padding: 0.8rem 0;
+}
+
+.table-normal > tbody td,th {
+	border-bottom: 1px solid gray;
+	padding: 0.4rem 0;
+}
