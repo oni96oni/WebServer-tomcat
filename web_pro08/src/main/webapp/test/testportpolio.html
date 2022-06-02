@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="./testportpolio.css">
+</head>
+<body>
+	<form action="insert.no" method="POST">
+		<fieldset>
+			<legend>공지사항 작성하기</legend>
+			<div>
+				<label class="css1">제목</label><input type="text" name="title" style="width:300px" placeholder="제목을 입력하시오." required>
+			</div><br>
+			<div>
+			<label class="css1">내용</label><input type="text" name="content"  style="height:200px;width:300px" placeholder="내용을 입력하시오." required>
+			</div><br>
+			<div>
+			<p class="css1">첨부파일
+			<input type="file" name="uploadFile">
+			</div><br>
+			<div  style="text-align: center">
+			<input type="button" value="작성하기">
+			</div>
+			
+		</fieldset>
+	</form>
+</body>
+</html>
