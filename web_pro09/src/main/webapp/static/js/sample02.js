@@ -45,3 +45,16 @@ function f8(x,y=0, ...args) {
 		console.log("\t" + arg);
 	}
 }
+
+function f9() {
+	console.log(arguments);
+}
+
+/*앞에 function 키워드를 빼버리고 화살표로 대체 한다.
+var f10 = () => {
+	return "익명 함수";
+}
+*/
+var f10 = () => "익명 함수";
+var f11 = (x) => x;
+
