@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+body {
+	background-color : whitesmoke;
+}
+
+table {
+	border-collapse : collapse;
+}
+
+table, td, th {
+	border : 1px solid black;
+}
+
+td,th {
+	padding: 1rem;
+}
+
+textarea {
+	resize: none;
+	width: 120px;
+	height: 60px;
+}

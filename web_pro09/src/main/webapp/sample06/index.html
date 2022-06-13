@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="../static/css/sample06.css">
+	<script type="text/javascript" src="../static/js/sample06.js"></script>
+</head>
+<body>
+	<h1>Event</h1>
+	<h2>이벤트 등록 방법</h2>
+	<h3>인라인 이벤트 등록</h3>
+	<div id="id1" onclick="f1()">여기를 클릭하세요.</div>
+	<div onclick="f2(this)">여기를 클릭하세요.</div>
+	<hr>
+	<h3>고전(이벤트 속성에 함수 연결) 이벤트 등록</h3>
+	<div id="id2">여기를 클릭하세요.</div>
+	<script type="text/javascript">
+		var id2 = document.getElementById("id2");
+		id2.onclick = function() { //속성이어서 덮어씌워진다! 같이 실행x
+			this.innerText += "클릭 이벤트 동작111";
+		};
+		id2.onclick = function() {
+			this.innerText += "클릭 이벤트 동작222";
+		};
+	</script>
+	<hr>
+	<h3>표준 방식(addEventListener 함수로 등록) 이벤트 등록</h3>
+	<div id="id3">여기를 클릭하세요.</div>
+	<script type="text/javascript"> //등록,추가 형식이어서 같이 실행이 된다.
+		var id3 = document.getElementById("id3");
+		id3.addEventListener("click", function() {
+			this.innerText += "클릭 이벤트 동작111";
+		});
+		id3.addEventListener("click", function() {
+			this.innerText += "클릭 이벤트 동작222";
+		});
+	</script>
+	<hr>
+	<h2>이벤트 종류</h2>
+	<table>
+		<tbody>
+			<tr>
+				<td>load</td>
+				<td>웹 페이지 정보(css, javascript, image 등)가 로드 완료된 시점에 발생</td>
+				<td>
+					<script type="text/javascript">
+						window.addEventListener("load", function(e) {
+							console.log(e);
+							console.log("페이지 로드가 완료되었습니다.");
+						});
+						//document.getElementById("res1").innerText = "로드 완료!";
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<td>focus/blur</td>
+				<td>웹 페이지 정보(css, javascript, image 등)가 로드 완료된 시점에 발생</td>
+				<td>
+					<input id="id4" type="text">
+					<input id="id5" type="text">
+					<script type="text/javascript">
+						var id4 = document.getElementById("id4");
+						var id5 = document.getElementById("id5");
+						
+						id4.addEventListener("focus", function(e) {
+							this.value = "포커스가 잡혔습니다.";
+						}); 
+						id5.addEventListener("focus", function(e) {
+							this.value = "포커스가 잡혔습니다.";
+						});
+						id4.addEventListener("blur", function(e) {
+							this.value = "포커스가 풀렸습니다.";
+						}); 
+						id5.addEventListener("blur", function(e) {
+							this.value = "포커스가 풀렸습니다.";
+						});
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<td>resize</td>
+				<td>브라우저 창의 크기가 변경 될때</td>
+				<td>
+					<label id="id6"></label>
+					<script type="text/javascript">
+						var id6 = document.getElementById("id6");
+						
+						window.addEventListener("resize", function(e) {
+							id6.innerText = `x:${this.innerWidth}, y:${this.innerHeight}`;
+						}); 
+					</script>
+				</td>
+			</tr>
+			<tr>
+				<td>scroll</td>
+				<td>스크롤 동작을 했을 때</td>
+				<td>
+					<label id="id7"></label>
+					<textarea id="id8"></textarea>
+					<script type="text/javascript">
+						var id7 = document.getElementById("id7");
+						var id8 = document.getElementById("id8");
+						window.addEventListener("scroll", function(e) {
+							id7.innerText = `x:${this.scrollX}, y:${this.scrollY}`;
+						});
+						id8.addEventListener("scroll", function(e) {
+							console.log(e);
+							id8.value = `x:${this.scrollX}, y:${this.scrollY}`;
+						});
+					</script>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div id="res1"></div>
+</body>
+</html>
