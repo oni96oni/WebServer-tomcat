@@ -1,15 +1,15 @@
 @charset "UTF-8";
 
 body {
-	background-color : whitesmoke;
+	background-color: whitesmoke;
 }
 
 table {
-	border-collapse : collapse;
+	border-collapse: collapse;
 }
 
-table, td, th {
-	border : 1px solid black;
+table,td,th {
+	border: 1px solid black;
 }
 
 td,th {
@@ -17,7 +17,16 @@ td,th {
 }
 
 textarea {
+	font-size: 2rem;
 	resize: none;
+	width: 180px;
+	height: 3rem;
+	white-space: pre;
+}
+
+.box-red {
+	display: inline-block;
 	width: 120px;
-	height: 60px;
+	height: 120px;
+	background-color: lightcoral;
 }
