@@ -4,18 +4,41 @@ var id1 = document.getElementById("id1");
 	    	}
 	    	
 function formCheck(frm) {
-      let msg ='';
       if(frm.id.value.length==0) {
         setMessage('필수 입력 항목 입니다.', frm.id);
         return false;
       }
-      if(frm.pwd.value.length==0) {
+      if(frm.password.value.length==0) {
         setMessage('필수 입력 항목 입니다.', frm.pwd);
         return false;
       }
-      if(frm.pwdchk.value.length==0) {
+      if(frm.passwordchk.value.length==0) {
         setMessage('필수 입력 항목 입니다.', frm.pwdchk);
         return false;
       }
       return true;
 }
+
+/* 
+
+window.onload = function() {
+	initEventBinding();
+}
+
+function initEventBinding() {
+	requeiredEventBinding();
+}
+
+function requiredEventBinding() {
+	var requiredElements = document.qureySelectorAll("input[required]");
+	for(let element of requiredElements) {
+		element.addEventListener("blur", requiredHandler)
+	}
+}
+
+function requiredHandler(e) {
+	var element = e.target;
+	console.log(element);
+}
+
+*/
